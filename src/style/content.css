@@ -1,0 +1,15 @@
+.content{
+    background-color: rgb(223, 226, 253);
+    height: 400px;
+    width: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.content p{
+    padding-top: 40px;
+}
+.name_content{
+    flex-basis: 50px;
+    font-size: 20px;
+}
