@@ -1,7 +1,7 @@
 .content{
     background-color: rgb(223, 226, 253);
     height: 400px;
-    width: auto;
+    flex-basis: 90%;
     display: flex;
     flex-direction: column;
     align-items: center;
