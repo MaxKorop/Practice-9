@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+}
+.header{
+    background-color: rgb(47, 47, 47);
+    height: 50px;
+    color: white;
+
+}
+.header p{
+    text-align: center;
+    padding-top: 10px;
+    font-size: 20px;
+    font-weight: 900;
+    
+}

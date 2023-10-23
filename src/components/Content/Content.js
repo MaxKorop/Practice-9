@@ -1,5 +1,5 @@
 import React from 'react';
-import '../style/content.css';
+import './content.css';
 
 const Content = (props) => {
   const { title } = props;
