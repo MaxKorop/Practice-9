@@ -1,7 +1,7 @@
 function getId(prefix = "key") {
     let counter = 0
     return () => {
-      counter+=1
+      counter++
       return `${prefix}_${counter}`
     };
 }
