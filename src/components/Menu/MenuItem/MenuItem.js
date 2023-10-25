@@ -2,7 +2,7 @@ import React from 'react';
 
 
 const MenuItem = ({text, url}) => {
-    const isOpenInNewTab = (url) => url !== window.location.href;
+    const isOpenInNewTab = (url) => !url.includes(window.location.hostname);
     if (url) {
         return isOpenInNewTab(url) ?
             (<li>

@@ -12,7 +12,7 @@ const SideBar = (props) => {
   return (
     <div className="sidebar">
       <h2 className="title">{props.title}</h2>
-      <Menu list={menuItems} style={"incolumn"} handler={getId("side-bar")}/>
+      <Menu list={menuItems} style={"incolumn"} />
     </div>
   );
 };
