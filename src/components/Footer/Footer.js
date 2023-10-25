@@ -1,7 +1,6 @@
 import React from 'react';
 import './footer.css';
 import Menu from '../Menu/Menu';
-import getId from '../../helpers';
 
 
 const Footer = (props) => {
