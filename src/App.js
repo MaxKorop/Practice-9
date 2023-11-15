@@ -7,10 +7,8 @@ import Sidebar from './components/SideBar/SideBar';
 function App() {
   return (
     <>
-      <Header title="Header" />
-      <div
-        style={{ display: "flex", flexDirection: "row", width: "100%" }}
-      >
+      <Header title="Header"/>
+      <div>
         <Sidebar title="Menu"/>
         <Content title="Content"/>
       </div>
