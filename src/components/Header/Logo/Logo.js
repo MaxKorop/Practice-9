@@ -1,12 +1,14 @@
 import React from 'react';
 import './logo.css';
+import { useSelector } from 'react-redux';
 
 
-const Logo = (props) => {
-
+const Logo = () => {
+    const src = useSelector(state => state.logo.src);
+    
     return (
         <div>
-            <a href="http://localhost:3000"><img src={props.src} alt='logo'/></a>
+            <a href="http://localhost:3000"><img src={src} alt='logo'/></a>
         </div>
     );
 }

@@ -1,19 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCurrentDateTime } from '../../../../store/dateTimeSlice';
+import moment from 'moment';
 
 
 const CurrentDate = (props) => {
-    const [currentDate, setCurrentDate] = useState(props.dateObj);
+    const dispatch = useDispatch();
+    const dateTime = useSelector(state => state.dateTime.dateTime);
 
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentDate(new Date());
+            dispatch(setCurrentDateTime(moment().valueOf()));
         }, 10000);
         return () => clearInterval(interval);
-    }, []);
+    }, [dispatch]);
+    const currentDate = moment(dateTime)
     
     return (
         <div>
-            <p style={{fontSize: "13px", fontWeight: "normal"}}>{currentDate.toDateString()}</p>
+            <p style={{fontSize: "13px", fontWeight: "normal"}}>{currentDate.format('MMM Do YY')}</p>
         </div>
     );
 }

@@ -1,17 +1,24 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { setCurrentDateTime } from '../../../../store/dateTimeSlice';
+import moment from 'moment';
+
 
 const CurrentTime = (props) => {
-    const [currentTime, setCurrentTime] = useState(props.dateObj);
+    const dispatch = useDispatch();
+    const dateTime = useSelector(state => state.dateTime.dateTime);
+
     useEffect(() => {
         const interval = setInterval(() => {
-            setCurrentTime(new Date());
+            dispatch(setCurrentDateTime(moment().valueOf()));
         }, 1000);
         return () => clearInterval(interval);
-    }, []);
+    }, [dispatch]);
+    const currentTime = moment(dateTime)
 
     return (
         <div>
-            <p style={{fontSize: "13px", fontWeight: "normal"}}>{currentTime.toLocaleTimeString()}</p>
+            <p style={{fontSize: "13px", fontWeight: "normal"}}>{currentTime.format('LTS')}</p>
         </div>
     );
 }
