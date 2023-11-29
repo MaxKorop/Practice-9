@@ -5,10 +5,10 @@ import './quotes.css';
 
 const Quotes = () => {
     const [quotes, setQuotes] = useState([]);
-    const [url, setUrl] = useState(new URL(`https://quote-garden.onrender.com/api/v3/quotes/random`));
     const keys = getId();
     
     const getQuotes = () => {
+        const url = `https://quote-garden.onrender.com/api/v3/quotes/random?count=3`;
         fetch(url)
             .then((response) => response.json())
             .then((result) => {
@@ -19,12 +19,6 @@ const Quotes = () => {
                 setQuotes([]);
             });
     };
-
-    const setParams = (value) => {
-        const newURL = new URL(url.href)
-        newURL.searchParams.set('count', Math.abs(value));
-        setUrl(newURL);
-    }
     
     const clearQuotes = () => {
         setQuotes([]);
@@ -37,8 +31,6 @@ const Quotes = () => {
     return (
         <div className='wrapper_quotes'>
             <button onClick={getQuotes} className='button_add'>Generate quotes</button>
-            <label htmlFor="count">Select number of Quotes</label>
-            <input type="number" name='count' onChange={(e) => setParams(e.target.value)} min={1}/>
             {quotes.map((text) => (
                 <Quote text={text["quoteText"]} key={keys()} />
             ))}

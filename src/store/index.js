@@ -1,12 +1,14 @@
-import { configureStore } from "@reduxjs/toolkit";
-import logoReducer from "./logoSlice";
-import menuReducer from "./menuSlice";
-import dateTimeReducer from "./dateTimeSlice";
+import {configureStore} from '@reduxjs/toolkit';
+import logoReducer from '../store/logoSlice';
+import menuReducer from '../store/menuSlice';
+import dateReducer from '../store/dateSlice';
 
-export default configureStore({
+const store = configureStore({
     reducer: {
         logo: logoReducer,
         menu: menuReducer,
-        dateTime: dateTimeReducer
+        date: dateReducer,
     }
-});
+  });
+  
+  export default store;

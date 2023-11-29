@@ -2,8 +2,6 @@ import React from 'react';
 import './footer.css';
 import Menu from '../Menu/Menu';
 
-
-
 const Footer = (props) => {
   return (
     <footer className="footer">

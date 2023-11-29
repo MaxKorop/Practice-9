@@ -1,5 +1,6 @@
 import { createSlice } from '@reduxjs/toolkit';
 
+
 const menuSlice = createSlice({
   name: 'menu',
   initialState: {
@@ -8,7 +9,7 @@ const menuSlice = createSlice({
       { text: 'moodle', url: 'http://78.137.2.119:2929/' },
       { text: 'chsbc', url: 'http://csbc.edu.ua/' },
     ],
-  }
+  },
 });
 
 export default menuSlice.reducer;
